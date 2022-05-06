@@ -1,0 +1,31 @@
+---
+import '../styles/normalize.css'
+import '../styles/global.css'
+---
+
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Astro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+	</head>
+	<body>
+    <div class="l-base-layout">
+      <slot />
+    </div>
+	</body>
+</html>
+
+<style>
+.l-base-layout {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  margin: 30px auto;
+  max-width: min(100%, 900px);
+  padding: 0 30px;
+}
+</style>

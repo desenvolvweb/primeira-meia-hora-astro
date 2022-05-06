@@ -1,23 +1,16 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro"
 import SocialCard from "../components/SocialCard.astro"
-import '../styles/normalize.css'
-import '../styles/global.css'
+
+const profiles = await fetch('https://randomuser.me/api/?results=6').then(res => res.json())
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Astro</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-	</head>
-	<body>
+<BaseLayout>
+  {profiles.results.map(profile => (
     <SocialCard
-      name="Fulano de Talz"
-      picture="https://randomuser.me/api/portraits/women/70.jpg"
-      address="Massonnens, Switzerland"
+      name={`${profile.name.first} ${profile.name.last}`}
+      picture={profile.picture.large}
+      address={`${profile.location.city}, ${profile.location.country}`}
     />
-	</body>
-</html>
+  ))}
+</BaseLayout>
