@@ -1,0 +1,67 @@
+---
+import Button from "./Button.astro"
+
+const { name, picture, address } = Astro.props
+---
+
+<article class="c-social-card">
+  <img
+    src={picture}
+    alt={`Picture of ${name}`}
+    width="80"
+    height="80"
+    class="c-social-card__picture">
+
+  <h2 class="c-social-card__name">{name}</h2>
+
+  <address class="c-social-card__address">{address}</address>
+
+  <aside class="c-social-card__actions">
+    <Button label="Follow" />
+    <Button label="Message" />
+  </aside>
+</article>
+
+<style>
+.c-social-card {
+  align-items: center;
+  background-color: #fff;
+  box-shadow:
+    0 1.1px 2.2px rgba(0, 0, 0, 0.07),
+    0 2.7px 5.3px rgba(0, 0, 0, 0.05),
+    0 5px 10px rgba(0, 0, 0, 0.042),
+    0 8.9px 17.9px rgba(0, 0, 0, 0.035),
+    0 16.7px 33.4px rgba(0, 0, 0, 0.028),
+    0 40px 80px rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.c-social-card > * + * {
+  margin-top: 12px;
+}
+
+.c-social-card__picture {
+  border-radius: 9999px;
+}
+
+.c-social-card__name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 36px;
+  margin: 0;
+}
+
+.c-social-card__address {
+  background: no-repeat left/16px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'/%3E%3C/svg%3E");
+  filter: invert(56%) sepia(0%) saturate(167%) hue-rotate(146deg) brightness(90%) contrast(78%);
+  font-size: 14px;
+  font-style: normal;
+  padding-left: 20px;
+}
+
+.c-social-card__action {
+
+}
+</style>

@@ -1,0 +1,25 @@
+---
+const {label} = Astro.props;
+---
+
+<button>{label}</button>
+
+<style>
+button {
+  background-color: #fff;
+  border-radius: 9999px;
+  border: 1px solid cornflowerblue;
+  color: cornflowerblue;
+  cursor: pointer;
+  font-size: x-small;
+  padding: 4px 16px;
+  text-transform: uppercase;
+  transition: background-color 125ms ease-out;
+}
+
+button:hover {
+  background-color: cornflowerblue;
+  color: #fff;
+  transition-timing-function: ease-in;
+}
+</style>

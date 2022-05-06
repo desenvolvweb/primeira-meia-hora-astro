@@ -1,13 +1,23 @@
 ---
-
+import SocialCard from "../components/SocialCard.astro"
+import '../styles/normalize.css'
+import '../styles/global.css'
 ---
+
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>Astro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<h1>Astro</h1>
+    <SocialCard
+      name="Fulano de Talz"
+      picture="https://randomuser.me/api/portraits/women/70.jpg"
+      address="Massonnens, Switzerland"
+    />
 	</body>
 </html>
