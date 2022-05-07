@@ -5,6 +5,8 @@ const { name, picture, address } = Astro.props
 ---
 
 <article class="c-social-card">
+  <h1 class="c-social-card__name">{name}</h1>
+
   <img
     src={picture}
     alt={`Picture of ${name}`}
@@ -12,17 +14,15 @@ const { name, picture, address } = Astro.props
     height="80"
     class="c-social-card__picture">
 
-  <h2 class="c-social-card__name">{name}</h2>
-
   <address class="c-social-card__address">{address}</address>
 
-  <aside class="c-social-card__actions">
+  <aside>
     <Button label="Follow" />
     <Button label="Message" />
   </aside>
 </article>
 
-<style>
+<style lang="scss">
 .c-social-card {
   align-items: center;
   background-color: #fff;
@@ -38,33 +38,27 @@ const { name, picture, address } = Astro.props
   flex-direction: column;
   justify-content: space-between;
   padding: 16px;
-}
 
-.c-social-card > * + * {
-  margin-top: 12px;
-}
+  &__picture {
+    border-radius: 9999px;
+    outline: 1px solid gainsboro;
+    order: -1;
+  }
 
-.c-social-card__picture {
-  border-radius: 9999px;
-  outline: 1px solid gainsboro;
-}
+  &__name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 36px;
+    margin: 12px 0 0;
+    text-align: center;
+  }
 
-.c-social-card__name {
-  font-family: 'Oswald', sans-serif;
-  font-size: 36px;
-  margin: 0;
-  text-align: center;
-}
-
-.c-social-card__address {
-  background: no-repeat left/16px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'/%3E%3C/svg%3E");
-  filter: invert(56%) sepia(0%) saturate(167%) hue-rotate(146deg) brightness(90%) contrast(78%);
-  font-size: 14px;
-  font-style: normal;
-  padding-left: 20px;
-}
-
-.c-social-card__action {
-
+  &__address {
+    background: no-repeat left/16px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'/%3E%3C/svg%3E");
+    filter: invert(56%) sepia(0%) saturate(167%) hue-rotate(146deg) brightness(90%) contrast(78%);
+    font-size: 14px;
+    font-style: normal;
+    margin: 12px 0;
+    padding-left: 20px;
+  }
 }
 </style>
