@@ -9,8 +9,10 @@
     "preview": "astro preview"
   },
   "devDependencies": {
+    "@astrojs/svelte": "0.1.2",
     "astro": "1.0.0-beta.20",
     "postcss-pxtorem": "6.0.0",
-    "sass": "1.51.0"
+    "sass": "1.51.0",
+    "svelte": "3.48.0"
   }
 }

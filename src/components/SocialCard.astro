@@ -1,5 +1,6 @@
 ---
 import Button from "./Button.astro"
+import FollowButton from "./FollowButton.svelte"
 
 const { name, picture, address } = Astro.props
 ---
@@ -17,7 +18,7 @@ const { name, picture, address } = Astro.props
   <address class="c-social-card__address">{address}</address>
 
   <aside>
-    <Button label="Follow" />
+    <FollowButton client:load />
     <Button label="Message" />
   </aside>
 </article>
